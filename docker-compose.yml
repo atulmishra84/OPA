@@ -1,0 +1,18 @@
+version: '3'
+services:
+  opa:
+    image: openpolicyagent/opa:latest
+    ports:
+      - "8181:8181"
+    command: ["run", "--server"]
+    volumes:
+      - ./opa_flask_package/logfilter.rego:/logfilter.rego
+      - ./opa_flask_package:/policies
+    working_dir: /policies
+
+  flask-api:
+    build: ./opa_flask_package
+    ports:
+      - "5000:5000"
+    depends_on:
+      - opa
