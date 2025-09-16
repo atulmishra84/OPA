@@ -1,17 +1,22 @@
-version: '3'
+version: "3.9"
+
 services:
   opa:
     image: openpolicyagent/opa:latest
+    command: ["run", "--server", "--log-level=debug"]
     ports:
       - "8181:8181"
-    command: ["run", "--server"]
-    volumes:
-      - ./opa_flask_package/logfilter.rego:/logfilter.rego
-      - ./opa_flask_package:/policies
-    working_dir: /policies
 
-  flask-api:
-    build: ./opa_flask_package
+  governance-api:
+    build: .
+    environment:
+      - OPA_URL=http://opa:8181
+      - BASE_POLICY_DIR=/app/policies/base
+      - DYNAMIC_POLICY_DIR=/app/policy_feed
+      - POLICY_POLL_INTERVAL=10
+    volumes:
+      - ./policies:/app/policies:ro
+      - ./policy_feed:/app/policy_feed
     ports:
       - "5000:5000"
     depends_on:
