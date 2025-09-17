@@ -10,4 +10,8 @@
   "engines": {
     "node": ">=18"
   }
+  "scripts": {
+  "build": "next build"
+}
+
 }
