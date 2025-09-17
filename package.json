@@ -1,0 +1,13 @@
+{
+  "name": "opa-governance-toolkit",
+  "version": "1.0.0",
+  "description": "Governance layer for HIPAA redaction, Gatekeeper validation, and automated OPA policy management.",
+  "private": true,
+  "scripts": {
+    "start": "python app.py",
+    "test": "python -m pytest"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
