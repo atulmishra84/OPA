@@ -245,7 +245,11 @@ def policies_status():
 
 
 if __name__ == "__main__":
+<<<<<<< HEAD
     try:
         app.run(host="0.0.0.0", port=5000)
     finally:
         policy_manager.stop()
+=======
+    app.run(port=5001)
+>>>>>>> a6bf77b (Your descriptive commit message)

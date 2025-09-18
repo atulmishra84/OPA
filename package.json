@@ -1,6 +1,7 @@
 {
   "name": "opa-governance-toolkit",
   "version": "1.0.0",
+<<<<<<< HEAD
   "description": "Governance layer for HIPAA redaction, Gatekeeper validation, and automated OPA policy management.",
   "private": true,
   "scripts": {
@@ -14,4 +15,12 @@
   "build": "next build"
 }
 
+=======
+  "description": "OPA Gatekeeper code for healthcare AI solution",
+  "main": "index.js",
+  "scripts": {
+    "build": "echo Build successful"
+  },
+  "dependencies": {}
+>>>>>>> a6bf77b (Your descriptive commit message)
 }

@@ -3,7 +3,11 @@ version: "3.9"
 services:
   opa:
     image: openpolicyagent/opa:latest
+<<<<<<< HEAD
     command: ["run", "--server", "--log-level=debug"]
+=======
+    command: "run --server --addr 0.0.0.0:8181"
+>>>>>>> a6bf77b (Your descriptive commit message)
     ports:
       - "8181:8181"
 
@@ -18,6 +22,10 @@ services:
       - ./policies:/app/policies:ro
       - ./policy_feed:/app/policy_feed
     ports:
+<<<<<<< HEAD
       - "5000:5000"
+=======
+      - "5001:5000"
+>>>>>>> a6bf77b (Your descriptive commit message)
     depends_on:
       - opa
